@@ -8,21 +8,23 @@
         <% for (var i = 0; i < postDB.length; i++) { %>
             <div class="user-post">
                 <img src="#" width="90%" height="40%">
-                <a href="#"><h2><%= postDB[i][1] %></h2></a>
-                <h3><%= postDB[i][0] %></h3>
-                <p><%= postDB[i][2] %></p>
+                <div class="text-container">
+                    <a href="#"><h2><%= postDB[i].title %></h2></a>
+                    <p><%= postDB[i].content %></p>
+                    <small>By: <%= postDB[i].author %> <br> <%= postDB[i].timestamp %></small>
+                </div>
                 <div class="icon-container">
                     <div class="update-delete-container">
-                        <a href="/delete"><img src="images/delete-icon.png" alt="delete-icon" height="20px"></a>
-                        <a href="/update"><img src="images/update-icon.png" alt="update-icon" height="20px"></a>
+                        <a href="/delete/<%= postDB[i].id %>"><img src="images/delete-icon.png" alt="delete-icon" height="20px"></a>
+                        <a href="/update/<%= postDB[i].id %>"><img src="images/update-icon.png" alt="update-icon" height="20px"></a>
                     </div>
                 </div>
             </div>
         <% } %>
     </div>
-    <% } else { %>
-        <h1 class="blogs-h1">There are no blogs yet.</h1>
-    <% } %>
+<% } else { %>
+    <h1 class="blogs-h1">There are no blogs yet.</h1>
+<% } %>
 
 
 

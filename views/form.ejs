@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="/styles/main.css" type="text/css">
+
+<%- include("partials/header.ejs") %>
+
+    <div class="form-container">
+        <% if (locals.post) { %>
+            <form action="/api/update/<%= post.id %>" method="post">
+
+                <div class="name-container input-container">
+                    <h3>AUTHOR</h3>
+                    <input type="text" name="author" placeholder="Full name" value="<%= post.author %>">
+                </div>
+
+                <div class="title-container input-container">
+                    <h3>TITLE</h3>
+                    <input  type="text" name="title" placeholder="Describe your post" value="<%= post.title %>">
+                </div>
+
+                <div class="content-container input-container">
+                    <h3>BLOG CONTENT</h3>
+                    <textarea name="content" wrap="soft" placeholder="What happened today?"><%= post.content %></textarea>
+                </div>
+
+                <div class="submit-container input-container">
+                    <input type="submit" value="UPDATE">
+                </div>
+
+            </form>
+        <% } else { %>
+            <form action="/api/create" method="post">
+
+                <div class="name-container input-container">
+                    <h3>AUTHOR</h3>
+                    <input type="text" name="author" placeholder="Full name">
+                </div>
+
+                <div class="title-container input-container">
+                    <h3>TITLE</h3>
+                    <input  type="text" name="title" placeholder="Describe your post">
+                </div>
+
+                <div class="content-container input-container">
+                    <h3>BLOG CONTENT</h3>
+                    <textarea name="content" wrap="soft" placeholder="What happened today?"></textarea>
+                </div>
+
+                <div class="submit-container input-container">
+                    <input type="submit" value = "POST">
+                </div>
+
+            </form>
+        <% } %>
+    </div>
+
+<%- include("partials/footer.ejs") %>
