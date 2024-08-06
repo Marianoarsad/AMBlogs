@@ -1,1 +1,1 @@
-Have to learn more about Express and API, Im struggling with updating and deleting resources. I can probably do it with my current knowledge but its guaranteed to suck.
+Resources now handled by API, need to improve error handling and add a feature where the form detects whether a section of the form is empty.
